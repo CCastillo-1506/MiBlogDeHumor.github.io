@@ -154,14 +154,29 @@
 		<section class="facts-area pt-100 pb-100">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 col-md-6 single-fact">
-							<h2 class="counter">6785</h2>
-							<p class="text-uppercase">Site Visitors</p>
-						</div>
-						<div class="col-lg-3 col-md-6 single-fact">
-							<h2 class="counter">1059</h2>
-							<p class="text-uppercase">Online now</p>
-					</div>
+						<p>Si desea saber su localizacion en cualquier parte del mundo, por favor haga "Click" en el bot&oacute;n de localizaci&oacute;n</p>
+						<br>
+						<p>Con las coordenadas proporcionadas, puede acceder a su ubicaci&oacute;n desde <a href="https://www.google.com/maps/@8.9848738,-79.5266101,15z">Google Maps</a></p>
+
+<button onclick="getLocation()">Localizaci&oacute;n</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+    
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
 				</div>
 			</section>
 			<!-- End facts Area -->
